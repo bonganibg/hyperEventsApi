@@ -29,7 +29,7 @@ const tourSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    eventIds: {
+    events: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: "Event"
     }
