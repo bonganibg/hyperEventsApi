@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node --watch --env-file=.env server.js",
-    "lint": "npx eslint"
+    "lint": "npx eslint",
+    "test": "npx jest"
   },
   "keywords": [],
   "author": "",

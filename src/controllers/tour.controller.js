@@ -1,13 +1,19 @@
 const TourModel = require("../models/tour.model");
+const { createTour } = require("../services/tour.service")
 
 exports.createTour = async (req, res) => {
-    const body = req.body;
+    const result = await createTour(req.body);
 
-    try{
-        const tour = await TourModel.create(body);
-        res.status(203).json(tour)
-    } catch(err){
-        res.status(400).json(err.message)
+    if (result.success){
+        res.status(203).json({
+            message: "Created tour",
+            id: result.id
+        })
+    } else{
+        res.status(400).json({
+            message: "Failed to create tour",
+            error: result.error
+        })
     }
 }
 
