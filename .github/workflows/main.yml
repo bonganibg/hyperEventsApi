@@ -16,6 +16,10 @@ jobs:
       - name: Run Unit tests
         run: npm run test
 
+      - name: Linter Failed 
+        if: failure()
+        run: curl -d "content=Unit test has failed" https://discord.com/api/webhooks/1256687026250584084/ZtyedEy73Vpvb4yW10HZV_W8PsJT-DxtZbXjCMO4KhJ5D51fY1BMr5BC00PpvQJsrHFa
+
 
     linter:
       runs-on: ubuntu-latest
@@ -29,3 +33,7 @@ jobs:
 
       - name: Run Unit tests
         run: npm run lint
+
+      - name: Linter Failed 
+        if: failure()
+        run: curl -d "content=Linter has failed" https://discord.com/api/webhooks/1256687026250584084/ZtyedEy73Vpvb4yW10HZV_W8PsJT-DxtZbXjCMO4KhJ5D51fY1BMr5BC00PpvQJsrHFa
