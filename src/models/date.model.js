@@ -6,6 +6,14 @@ const ticketSchema = mongoose.Schema({
 });
 
 const dateSchema = mongoose.Schema({
+    tourId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tour"
+    },
+    eventId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Event"
+    },
     date: {
         type: Date,
         required: true

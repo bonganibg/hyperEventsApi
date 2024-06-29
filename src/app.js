@@ -11,6 +11,8 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, d
 .catch(err => console.log(err));
 
 const tourRoute = require("./routes/tour.route");
+const eventRoute = require("./routes/event.route");
 app.use("/tours", tourRoute);
+app.use("/events", eventRoute);
 
 module.exports = app;
