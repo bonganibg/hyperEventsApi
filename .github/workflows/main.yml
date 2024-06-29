@@ -1,0 +1,31 @@
+name: Basic Checks
+
+on: [push]
+
+jobs:
+    unit-tests:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Configure Environment 
+        run: npm install
+
+      - name: Run Unit tests
+        run: npm run test
+
+
+    linter:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Configure Environment 
+        run: npm install
+
+      - name: Run Unit tests
+        run: npm run lint
